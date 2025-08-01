@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事業計画策定プロンプト生成用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: #0f172a; }
+        .glass-card { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background-image: linear-gradient(to right, #f43f5e, #ef4444); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .fade-in { animation: fadeIn 0.7s ease-in-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .message-box { transition: opacity 0.3s, transform 0.3s; }
+        .focus-ring-gradient:focus { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.6); }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300">
+
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 md:p-8 min-h-screen flex flex-col justify-center">
+        
+        <header class="text-center mb-10 fade-in">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gradient mb-3">事業計画策定プロンプト生成用</h1>
+            <p class="text-slate-400 text-lg">アイデアを、投資家を動かすビジネスプランへ。</p>
+        </header>
+
+        <main class="glass-card p-6 sm:p-8 rounded-2xl shadow-2xl shadow-rose-900/20 space-y-8 fade-in" style="animation-delay: 0.2s;">
+
+             <section id="how-to-use">
+                <div class="flex items-start gap-4 sm:gap-6">
+                    <div class="flex-shrink-0 border-2 border-rose-500/50 text-rose-400 rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg shadow-inner shadow-rose-900/50">1</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-100 mb-4">使い方ガイド</h2>
+                        <div class="space-y-5 text-slate-300">
+                             <div>
+                                <h3 class="font-semibold text-slate-200 mb-2 flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                                    推奨AIモデル
+                                </h3>
+                                <p>このプロンプトは、戦略的思考と網羅的な分析力に優れたAIモデルで最高の性能を発揮します。</p>
+                                <ul class="list-disc list-inside mt-2 pl-2 space-y-1 text-slate-400">
+                                    <li><strong>Google: Gemini 2.5 Pro</strong></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-200 mb-2 flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" /></svg>
+                                    利用フロー
+                                </h3>
+                                <ol class="list-decimal list-inside mt-2 pl-2 space-y-1 text-slate-400">
+                                    <li>これまでのステップで定義した事業の前提情報を入力します。</li>
+                                    <li>「プロンプトを生成」ボタンで、AIへの指示文が完成します。</li>
+                                    <li>「コピー」ボタンで指示文をコピーし、AIに貼り付けて実行します。</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-slate-700/80">
+            
+            <section id="input-section">
+                <div class="flex items-start gap-4 sm:gap-6">
+                    <div class="flex-shrink-0 border-2 border-rose-500/50 text-rose-400 rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg shadow-inner shadow-rose-900/50">2</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-100 mb-4">事業計画の情報を入力</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="ideaInput" class="block text-sm font-medium text-slate-400 mb-2">ビジネスアイデアの概要</label>
+                                <textarea id="ideaInput" rows="2" class="w-full p-3 bg-slate-900/70 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-500 transition duration-150 focus-ring-gradient" placeholder="例：AIを活用し、個人の学習進捗に合わせて最適化された語学学習カリキュラムを自動生成するモバイルアプリ"></textarea>
+                            </div>
+                            <div>
+                                <label for="personaInput" class="block text-sm font-medium text-slate-400 mb-2">ペルソナの詳細</label>
+                                <textarea id="personaInput" rows="3" class="w-full p-3 bg-slate-900/70 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-500 transition duration-150 focus-ring-gradient" placeholder="例：32歳、男性、商社勤務。海外出張が多く英語の必要性を感じているが、多忙で学習が継続できない。効率的に成果を出したいと考えている。"></textarea>
+                            </div>
+                            <div>
+                                <label for="painInput" class="block text-sm font-medium text-slate-400 mb-2">私たちが解決したい問題</label>
+                                <textarea id="painInput" rows="2" class="w-full p-3 bg-slate-900/70 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-500 transition duration-150 focus-ring-gradient" placeholder="例：多くの社会人が語学学習の必要性を感じているが、「何から手をつけていいか分からない」「学習が継続できない」「効果が実感できない」といった問題に直面している。"></textarea>
+                            </div>
+                             <div>
+                                <label for="causeInput" class="block text-sm font-medium text-slate-400 mb-2">私たちが特定した課題</label>
+                                <textarea id="causeInput" rows="2" class="w-full p-3 bg-slate-900/70 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-500 transition duration-150 focus-ring-gradient" placeholder="例：画一的な教材が多く、個人のレベルやライフスタイルに合っていない。また、学習成果が可視化されにくく、モチベーションを維持するのが難しい。"></textarea>
+                            </div>
+                        </div>
+                        <button id="generateBtn" class="mt-6 w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-red-600 to-rose-700 text-white font-bold rounded-lg shadow-lg hover:shadow-red-500/40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-red-500 transition-all duration-300 transform hover:scale-105">
+                            プロンプトを生成
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="output-section" class="hidden">
+                <hr class="border-slate-700/80 my-8">
+                <div class="flex items-start gap-4 sm:gap-6">
+                    <div class="flex-shrink-0 border-2 border-rose-500/50 text-rose-400 rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg shadow-inner shadow-rose-900/50">3</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-100 mb-3">生成されたプロンプト</h2>
+                        <div class="relative">
+                            <pre class="w-full bg-slate-900 border border-slate-700 rounded-lg p-4 pr-14 text-sm text-slate-300 overflow-x-auto whitespace-pre-wrap"><code id="promptOutput"></code></pre>
+                            <button id="copyBtn" title="コピーする" class="absolute top-3 right-3 p-2 bg-slate-700/80 text-slate-400 rounded-lg hover:bg-slate-600/80 hover:text-slate-200 transition-colors">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" /></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="messageBox" class="message-box fixed bottom-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-500 to-teal-500 text-white py-2 px-5 rounded-full shadow-lg opacity-0 -translate-y-5 pointer-events-none">コピーしました！</div>
+
+    <script>
+        const ideaInput = document.getElementById('ideaInput');
+        const personaInput = document.getElementById('personaInput');
+        const painInput = document.getElementById('painInput');
+        const causeInput = document.getElementById('causeInput');
+        const generateBtn = document.getElementById('generateBtn');
+        const outputSection = document.getElementById('output-section');
+        const promptOutput = document.getElementById('promptOutput');
+        const copyBtn = document.getElementById('copyBtn');
+        const messageBox = document.getElementById('messageBox');
+        
+        const fullPromptTemplate = \`
+# 役割（Role）
+あなたは、数々のスタートアップを成功に導き、シリーズA以降のグロースも支援してきた、経験豊富な経営戦略コンサルタント兼ベンチャーキャピタリストです。アイデアの原石から、その核心的価値（コアバリュー）を見抜き、最適なビジネスモデルを設計し、緻密な初期戦略から将来のスケールアップまで見据えた、一貫性のある事業戦略を描き出すことに、卓越した専門知識と実践経験を持っています。
+
+# 背景（Context）
+私たちは現在、新規事業のアイデアを、投資家や事業提携先を説得できるレベルの、網羅的かつ具体的なビジネスプランへと昇華させる段階にいます。 単に「何をするか」だけでなく、「なぜ我々がやるのか（コアバリュー）」、「どうやって勝ち筋を作るのか（初期戦略）」、「市場での立ち位置はどこか（競合分析）」、「どのようにして収益を上げるのか（ビジネスモデル）」、そして「将来どのように大きく成長するのか（スケール戦略）」という5つの観点を、一つのストーリーとして一気通貫で示す必要があります。
+
+# タスク（Task）
+以下の【入力情報】に基づき、ビジネスモデルの設計からスケール戦略までを網羅した、包括的な事業計画を策定してください。各ステップを順番に、論理的に実行し、最終的に一つの完成されたアウトプットとしてまとめてください。
+
+【Part 1: 戦略の基盤構築】
+ステップ1：市場機会の徹底分析と競合ポジショニング
+* **市場規模（TAM/SAM/SOM）の多角的算出**:
+    * トップダウン（マクロ統計から推計）とボトムアップ（ペルソナ数と単価から積算）の両方のアプローチを用いて、ターゲット市場の潜在規模（TAM）、獲得可能市場規模（SAM）、そして初期に現実的に狙える市場規模（SOM）を、具体的な算出根拠と共に推定してください。
+* **詳細な競合分析**:
+    * 直接競合・間接競合をそれぞれ3社以上特定します。
+    * 以下の項目を含む「競合分析テーブル」を作成し、各社の強み・弱みを徹底的に分析してください。
+        * 競合名
+        * 提供サービス/プロダクト
+        * 価格帯/収益モデル
+        * メインターゲット顧客
+        * 強み（なぜ顧客に選ばれているか）
+        * 弱み（攻め入る隙はあるか）
+* **コアバリューとUVP（独自の価値提案）の定義**:
+    * 競合分析を踏まえ、「なぜ顧客は競合ではなく、我々のサービスを選ぶべきなのか？」という問いに対する明確な答えとして、**独自の価値提案（UVP: Unique Value Proposition）**を定義してください。
+    * さらにその根底にある、競合が容易に模倣できない、持続的な競争優位性の源泉となるコアバリューは何かを言語化してください。
+
+ステップ2：最適なビジネスモデルの設計と収益化戦略
+* **収益モデルのブレインストーミング**:
+    * 事業アイデアとUVPに基づき、考えうる収益モデルの選択肢を複数（最低5つ）洗い出してください。（例：サブスクリプション、従量課金、マーケットプレイス手数料、広告、ライセンス、データ販売など）
+* **最適モデルの評価と選定**:
+    * 上記で洗い出した選択肢を、「UVPとの整合性」「顧客の支払い意欲」「スケーラビリティ」「競合優位性」の4つの軸で評価するテーブルを作成してください。
+    * 評価に基づき、最も推奨するプライマリー収益モデルを1つ選定し、その理由を論理的に説明してください。また、将来的に組み合わせうるセカンダリー収益モデルも提案してください。
+* **戦略的価格設定と価値指標**:
+    * 選定した収益モデルに基づき、具体的な価格設定案（例：フリーミアム、松・竹・梅の3プランなど）を提案してください。
+    * 各プランで顧客が「何に対して」お金を払うのか（価値指標：例 ユーザー数、利用量、機能解放など）を明確に定義してください。
+    * 価格の妥当性を、提供価値、想定コスト、競合価格の3つの観点から説明してください。
+* **コスト構造**: 事業運営に必要なコストを「変動費」「固定費」に分類し、具体的な費目と概算金額をリストアップしてください。
+
+【Part 2: 初期戦略の実行計画】
+ステップ3：初期顧客獲得の高度なGo-to-Market戦略
+* **チャネル戦略の優先順位付け**:
+    * ペルソナにリーチするための獲得チャネルを複数（最低5つ）洗い出し、それぞれの「期待効果」「想定コスト（CAC）」「即効性」を評価し、実行すべき優先順位を付けてください。
+* **具体的なアクションプラン（最初の90日間）**:
+    * 優先順位が最も高いチャネルについて、「最初の90日間で何をすべきか」を具体的なアクションプランに落とし込んでください。
+    * 初期のメッセージング戦略として、ペルソナの心に響くキャッチコピーや訴求ポイントの案を3つ提案してください。
+
+ステップ4：3カ年事業計画とPMF達成への道
+* 今後3年間の顧客獲得目標と、ステップ2で設計したビジネスモデルに基づいた収益計画表（売上、費用、利益）を作成してください。
+* 「何が達成されればPMF（プロダクト・マーケット・フィット）したと言えるのか」を定義し、それを測定するための最重要指標（KPI）を3〜5つ提案してください。
+
+【Part 3: 長期的な成長戦略】
+ステップ5：非連続な成長を実現するスケール戦略
+* **市場拡大戦略**:
+    * 初期ターゲット（SOM）を攻略した後、次にどの顧客セグメントや地域（SAM→TAM）へ展開していくか、そのロードマップを示してください。
+* **プロダクト進化戦略**:
+    * 事業を指数関数的に成長させるための、プロダクトの長期的な進化の方向性（例：機能拡張、プラットフォーム化、データビジネスへの展開など）を提案してください。
+* **組織成長戦略**:
+    * 事業のスケールに伴い、どのような組織体制（採用計画、チーム構成）が必要になるか、1年後と3年後の組織図を提示してください。
+
+ステップ6：総括：リスク分析とネクストステップ
+* この事業計画全体に潜む主要なリスクを特定し、その軽減策を提案してください。
+* この計画を実行に移すために、明日から始めるべき具体的な「最初の3つのアクション」を提案してください。
+
+# 【入力情報】
+* **ビジネスアイデアの概要**: {{IDEA}}
+* **ペルソナの詳細**: {{PERSONA}}
+* **このビジネスが解決する問題**: {{PAIN}}
+* **私たちが特定した課題**: {{CAUSE}}
+
+# 出力形式（Format）
+* **言語**: 日本語
+* **文体**: 経営戦略コンサルタントとしての、プロフェッショナルで、信頼でき、かつ建設的なトーン。
+* **構成**: 上記のステップに沿って、一つのまとまったドキュメントとして出力してください。
+* **視覚的要素**: 表（テーブル）、箇条書きを適切に活用し、情報が視覚的に理解しやすくなるように工夫してください。
+
+# 制約・指示（Constraints）
+* **算出根拠の明記**: すべての数値（市場規模、コスト、売上予測など）には、その数値を導き出した算出根拠や仮説を必ず具体的に記述してください。
+* **一般的知識の活用**: あなたが持つ経営戦略や財務に関する一般的な知識を最大限に活用し、入力情報にない要素（例：一般的な人件費の相場、広告のCPA相場など）も、仮説として補って分析を進めてください。
+* **提案の具体性**: すべての提案やアドバイスは、抽象的な精神論で終わらせず、「何を」「どのように」実行すべきか、具体的なアクションに繋がるレベルで記述してください。
+\`;
+
+        generateBtn.addEventListener('click', () => {
+            const idea = ideaInput.value.trim() || '（未入力）';
+            const persona = personaInput.value.trim() || '（未入力）';
+            const pain = painInput.value.trim() || '（未入力）';
+            const cause = causeInput.value.trim() || '（未入力）';
+
+            if (idea !== '（未入力）') {
+                let finalPrompt = fullPromptTemplate.replace('{{IDEA}}', idea);
+                finalPrompt = finalPrompt.replace('{{PERSONA}}', persona);
+                finalPrompt = finalPrompt.replace('{{PAIN}}', pain);
+                finalPrompt = finalPrompt.replace('{{CAUSE}}', cause);
+                
+                promptOutput.textContent = finalPrompt.trim();
+                
+                if(outputSection.classList.contains('hidden')) {
+                    outputSection.classList.remove('hidden');
+                    outputSection.classList.add('fade-in');
+                }
+                outputSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                ideaInput.focus();
+            }
+        });
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(promptOutput.textContent).then(() => {
+                messageBox.style.opacity = '1';
+                messageBox.style.transform = 'translate(-50%, 0)';
+                setTimeout(() => {
+                    messageBox.style.opacity = '0';
+                    messageBox.style.transform = 'translate(-50%, -20px)';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
