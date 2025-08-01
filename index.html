@@ -78,7 +78,7 @@
                                 <textarea id="personaInput" rows="3" class="w-full p-3 bg-slate-900/70 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-500 transition duration-150 focus-ring-gradient" placeholder="例：32歳、男性、商社勤務。海外出張が多く英語の必要性を感じているが、多忙で学習が継続できない。効率的に成果を出したいと考えている。"></textarea>
                             </div>
                             <div>
-                                <label for="painInput" class="block text-sm font-medium text-slate-400 mb-2">私たちが解決したい問題</label>
+                                <label for="painInput" class="block text-sm font-medium text-slate-400 mb-2">このビジネスが解決する問題</label>
                                 <textarea id="painInput" rows="2" class="w-full p-3 bg-slate-900/70 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-500 transition duration-150 focus-ring-gradient" placeholder="例：多くの社会人が語学学習の必要性を感じているが、「何から手をつけていいか分からない」「学習が継続できない」「効果が実感できない」といった問題に直面している。"></textarea>
                             </div>
                              <div>
@@ -124,7 +124,8 @@
         const copyBtn = document.getElementById('copyBtn');
         const messageBox = document.getElementById('messageBox');
         
-        const fullPromptTemplate = \`
+        // ★修正点: バックスラッシュ(`\`)を削除し、正しいテンプレートリテラルに修正
+        const fullPromptTemplate = `
 # 役割（Role）
 あなたは、数々のスタートアップを成功に導き、シリーズA以降のグロースも支援してきた、経験豊富な経営戦略コンサルタント兼ベンチャーキャピタリストです。アイデアの原石から、その核心的価値（コアバリュー）を見抜き、最適なビジネスモデルを設計し、緻密な初期戦略から将来のスケールアップまで見据えた、一貫性のある事業戦略を描き出すことに、卓越した専門知識と実践経験を持っています。
 
@@ -204,7 +205,7 @@
 * **算出根拠の明記**: すべての数値（市場規模、コスト、売上予測など）には、その数値を導き出した算出根拠や仮説を必ず具体的に記述してください。
 * **一般的知識の活用**: あなたが持つ経営戦略や財務に関する一般的な知識を最大限に活用し、入力情報にない要素（例：一般的な人件費の相場、広告のCPA相場など）も、仮説として補って分析を進めてください。
 * **提案の具体性**: すべての提案やアドバイスは、抽象的な精神論で終わらせず、「何を」「どのように」実行すべきか、具体的なアクションに繋がるレベルで記述してください。
-\`;
+`;
 
         generateBtn.addEventListener('click', () => {
             const idea = ideaInput.value.trim() || '（未入力）';
